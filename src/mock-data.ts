@@ -1,21 +1,76 @@
 
-import type { Task, StudySession, UserPreferences } from './types';
-// Removed mockCourses, mockExams, mockLectures, mockQuizzes as they will be fetched from API
+import type { Task, StudySession, UserPreferences } from './lib/types';
 
-// Tasks are not yet fetched from an API, so mock data is kept.
+// Mock Tasks
 export const mockTasks: Task[] = [
-  { id: 'T001', title: 'Programming Assignment 1', courseId: 'C101', dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], priority: 'high', effort: '5 hours', status: 'inprogress', description: 'Implement a simple calculator.' },
-  { id: 'T002', title: 'Read Chapter 3', courseId: 'M202', dueDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], priority: 'medium', status: 'todo' },
-  { id: 'T003', title: 'Lab Report 2', courseId: 'P303', dueDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], priority: 'high', effort: '8 hours', status: 'todo' },
-  { id: 'T004', title: 'Prepare for C101 Midterm', courseId: 'C101', dueDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], priority: 'high', status: 'todo' },
+  {
+    id: 'T001',
+    title: 'Programming Assignment 1',
+    courseId: 'C101',
+    dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    priority: 'high',
+    effort: '5 hours',
+    status: 'inprogress',
+    description: 'Implement a simple calculator.',
+  },
+  {
+    id: 'T002',
+    title: 'Read Chapter 3',
+    courseId: 'M202',
+    dueDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    priority: 'medium',
+    status: 'todo',
+  },
+  {
+    id: 'T003',
+    title: 'Lab Report 2',
+    courseId: 'P303',
+    dueDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    priority: 'high',
+    effort: '8 hours',
+    status: 'todo',
+  },
+  {
+    id: 'T004',
+    title: 'Prepare for C101 Midterm',
+    courseId: 'C101',
+    dueDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    priority: 'high',
+    status: 'todo',
+  },
 ];
 
-// Study sessions are not yet fetched from an API.
+// Mock Study Sessions
 export const mockStudySessions: StudySession[] = [
-    { id: 'SS001', title: 'Review C101 Lecture 2', date: new Date().toISOString().split('T')[0], startTime: '07:00 PM', endTime: '08:00 PM', lectureId: 'L002', type: 'lecture_review' },
-    { id: 'SS002', title: 'Work on Prog. Assignment 1', date: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], startTime: '06:00 PM', endTime: '08:00 PM', taskId: 'T001', type: 'task_work' },
-    { id: 'SS003', title: 'Calculus Problem Set', date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], startTime: '03:00 PM', endTime: '05:00 PM', courseId: 'M202', type: 'general_study' },
+  {
+    id: 'SS001',
+    title: 'Review C101 Lecture 2',
+    date: new Date().toISOString().split('T')[0],
+    startTime: '07:00 PM',
+    endTime: '08:00 PM',
+    lectureId: 'L002',
+    type: 'lecture_review',
+  },
+  {
+    id: 'SS002',
+    title: 'Work on Prog. Assignment 1',
+    date: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    startTime: '06:00 PM',
+    endTime: '08:00 PM',
+    taskId: 'T001',
+    type: 'task_work',
+  },
+  {
+    id: 'SS003',
+    title: 'Calculus Problem Set',
+    date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    startTime: '03:00 PM',
+    endTime: '05:00 PM',
+    lectureId: 'M202',
+    type: 'general_study',
+  },
 ];
+
 
 // User preferences are not yet fetched from an API.
 export const mockUserPreferences: UserPreferences = {

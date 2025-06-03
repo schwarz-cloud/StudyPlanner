@@ -39,8 +39,8 @@ const itemVariants = {
 type StudyTimeOption = 'morning' | 'afternoon' | 'evening';
 const studyTimeOptions: StudyTimeOption[] = ['morning', 'afternoon', 'evening'];
 
-type StudyTechniqueOption = 'pomodoro' | 'spaced_repetition' | 'feynman';
-const studyTechniqueOptions: StudyTechniqueOption[] = ['pomodoro', 'spaced_repetition', 'feynman'];
+type StudyTechniqueOption = 'pomodoro' | 'spaced_repetition' ;
+const studyTechniqueOptions: StudyTechniqueOption[] = ['pomodoro', 'spaced_repetition'];
 
 
 export default function SettingsPage() {

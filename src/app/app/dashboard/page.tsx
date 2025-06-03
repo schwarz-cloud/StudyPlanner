@@ -1,4 +1,5 @@
 
+
 "use client";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -82,14 +83,13 @@ export default function DashboardPage() {
     .sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .find(session => new Date(session.date) >= new Date());
   
-  const coursesToday = courses.filter(course => {
-    // This logic might need adjustment based on how 'course.schedule' is structured
-    // For now, assuming a simple check or if API provides today's classes directly
-    const scheduleDays = course.schedule.match(/[MWFThSuSa]+/g); // Basic attempt to parse days
-    const currentDayShort = format(new Date(), 'EEEEE'); // M, T, W, Th, F, S, Su - needs mapping
-    // This is a placeholder for more robust schedule parsing
-    return scheduleDays ? scheduleDays.some(day => day.includes(currentDayShort)) : false; // Simplified
-  }).slice(0,1);
+  const currentDay = format(new Date(), 'EEEE'); // e.g., 'Monday'
+
+const coursesToday = courses.filter(course => {
+  const scheduleArray = Array.isArray(course.schedule) ? course.schedule : [];
+  return scheduleArray.some((entry: any) => entry.day === currentDay);
+}).slice(0, 1);
+
 
 
   const quickLinks = [
